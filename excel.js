@@ -346,7 +346,7 @@
                                 var rec_count = 0;
 
                                 var len = 0;
-                                if (lengthfield === 52) {
+                                if (lengthfield === 53) {
                                     for (var i = 1; i < result.split("[$@~!~@$]").length; i++) {
                                         if (result.split("[$@~!~@$]")[i].length > 0) {
 
@@ -359,7 +359,7 @@
 													   + rec[27].trim().length + rec[28].trim().length + rec[29].trim().length + rec[30].trim().length + rec[31].trim().length + rec[32].trim().length + rec[33].trim().length + rec[34].trim().length
 													    + rec[35].trim().length + rec[36].trim().length + rec[37].trim().length + rec[38].trim().length + rec[39].trim().length + rec[40].trim().length + rec[41].trim().length + rec[42].trim().length
 														 + rec[43].trim().length + rec[44].trim().length + rec[45].trim().length + rec[46].trim().length + rec[47].trim().length + rec[48].trim().length + rec[49].trim().length + rec[50].trim().length
-														  + rec[51].trim().length + rec[52].trim().length + rec[53].trim().length ;
+														  + rec[51].trim().length + rec[52].trim().length + rec[53].trim().length + rec[54].trim().length;
                                                 if (len > 0) {
                                                     rec_count = rec_count + 1;
                                                     result_final.push({
@@ -395,29 +395,29 @@
 													  'Supervisor_First_Name': rec[29].trim(),
 													  'Supervisor_Local_Employee_ID': rec[30].trim(),
 													  'Supervisor_Payroll_Entity': rec[31].trim(),
-													  'Annual_Base_Salary': rec[31].trim(),
-													  'Reason_For_Salary_Change': rec[32].trim(),
-													  'Category': rec[33].trim(),
-													  'Budget_Local_Cost_Center_Code': rec[34].trim(),
-													  'Contractual_FTE': rec[35].trim(),
-													  'Organizational_MAF': rec[36].trim(),
-													  'Organizational_MIF': rec[37].trim(),
-													  'Job_Profile': rec[38].trim(),
-													  'Job_Code': rec[39].trim(),
-													  'Job_Family_Group': rec[40].trim(),
-													  'Job_Family': rec[41].trim(),
-													  'HRL': rec[42].trim(),
-													  'Job_Supervisory_Orga_Code': rec[43].trim(),
-													  'Job_Supervisory_Organization': rec[44].trim(),
-													  'Work_Email': rec[45].trim(),
-													  'Is_Manager': rec[46].trim(),
-													  'Position_ID': rec[47].trim(),
-													  'Position_Name': rec[48].trim(),
-													  'Continuous_Service_Date': rec[49].trim(),
-													  'Age': rec[50].trim(),
-													  'WORKDAY_ID': rec[51].trim(),
-													  'Source': rec[52].trim(),
-													  'HFM_STORE_CODE': rec[53].trim(),
+													  'Annual_Base_Salary': rec[32].trim(),
+													  'Reason_For_Salary_Change': rec[33].trim(),
+													  'Category': rec[34].trim(),
+													  'Budget_Local_Cost_Center_Code': rec[35].trim(),
+													  'Contractual_FTE': rec[36].trim(),
+													  'Organizational_MAF': rec[37].trim(),
+													  'Organizational_MIF': rec[38].trim(),
+													  'Job_Profile': rec[39].trim(),
+													  'Job_Code': rec[40].trim(),
+													  'Job_Family_Group': rec[41].trim(),
+													  'Job_Family': rec[42].trim(),
+													  'HRL': rec[43].trim(),
+													  'Job_Supervisory_Orga_Code': rec[44].trim(),
+													  'Job_Supervisory_Organization': rec[45].trim(),
+													  'Work_Email': rec[46].trim(),
+													  'Is_Manager': rec[47].trim(),
+													  'Position_ID': rec[48].trim(),
+													  'Position_Name': rec[49].trim(),
+													  'Continuous_Service_Date': rec[50].trim(),
+													  'Age': rec[51].trim(),
+													  'WORKDAY_ID': rec[52].trim(),
+													  'Source': rec[53].trim(),
+													  'HFM_STORE_CODE': rec[54].trim(),
                                                     });
                                                 }
                                             }
