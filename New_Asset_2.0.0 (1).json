@@ -13,14 +13,14 @@
     {
       "kind": "main",
       "tag": "com-Y-sap-sac-excel",
-      "url": "https://github.com/yousrataghouti/MD_UPLOAD/blob/e91db590200e33dae239721c1b70b59491aec1c3/excel.js",
+      "url": "https://yousrataghouti.github.io/MD_UPLOAD/excel.js",
       "integrity": "",
       "ignoreIntegrity": true
     },
     {
       "kind": "styling",
       "tag": "com-Y-sap-sac-excel-aps",
-      "url": "https://github.com/yousrataghouti/MD_UPLOAD/blob/e91db590200e33dae239721c1b70b59491aec1c3/aps_excel.js",
+      "url": "https://yousrataghouti.github.io/MD_UPLOAD/aps_excel.js",
       "integrity": "",
       "ignoreIntegrity": true
     }
