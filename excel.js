@@ -17,6 +17,7 @@
 
         constructor() {
             super();
+		console.log('Constructor: Widget is being created');
 
             _shadowRoot = this.attachShadow({
                 mode: "open"
