@@ -220,7 +220,7 @@
         }
 
     }
-    customElements.define("com.Priyanka.sap.sac.excel_1.x", Excel);
+    customElements.define("com.Priyanka.sap.sac.excel", Excel);
 
     // UTILS
     function loadthis(that, changedProperties) {
