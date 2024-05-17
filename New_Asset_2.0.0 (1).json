@@ -1,5 +1,5 @@
 {
-  "id": "com.Priyanka.sap.sac.excel",
+  "id": "com.Y.sap.sac.excel",
   "version": "1.0.0",
   "name": "Employee",
   "description": "employee",
@@ -12,14 +12,14 @@
   "webcomponents": [
     {
       "kind": "main",
-      "tag": "com-Priyanka-sap-sac-excel",
+      "tag": "com-Y-sap-sac-excel",
       "url": "https://yousrataghouti.github.io/MD_UPLOAD/excel.js",
       "integrity": "",
       "ignoreIntegrity": true
     },
     {
       "kind": "styling",
-      "tag": "com-Priyanka-sap-sac-excel-aps",
+      "tag": "com-Y-sap-sac-excel-aps",
       "url": "https://yousrataghouti.github.io/MD_UPLOAD/aps_excel.js",
       "integrity": "",
       "ignoreIntegrity": true
