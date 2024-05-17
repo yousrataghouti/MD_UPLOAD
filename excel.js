@@ -220,7 +220,7 @@
         }
 
     }
-    customElements.define("com-fd-djaja-sap-sac-excel", Excel);
+    customElements.define("com-fd-djaja-sap-sac-excel", class Excel extends HTMLElement);
 
     // UTILS
     function loadthis(that, changedProperties) {
