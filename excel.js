@@ -220,7 +220,7 @@
         }
 
     }
-    customElements.define("com", Excel);
+    customElements.define("com-y-sap-sac-excel", Excel);
 
     // UTILS
     function loadthis(that, changedProperties) {
