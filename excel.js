@@ -347,20 +347,14 @@
                                 var rec_count = 0;
 
                                 var len = 0;
-                                if (lengthfield === 53) {
+                                if (lengthfield === 7) {
                                     for (var i = 1; i < result.split("[$@~!~@$]").length; i++) {
                                         if (result.split("[$@~!~@$]")[i].length > 0) {
 
                                             var rec = result.split("[$@~!~@$]")[i].split("[#@~!~@#]");
                                             if (rec.length > 0) {
                                                 len = rec[0].trim().length + rec[1].trim().length + rec[2].trim().length + rec[3].trim().length + rec[4].trim().length + rec[
-                                                    5].trim().length + rec[6].trim().length + rec[7].trim().length + rec[8].trim().length + rec[9].trim().length + rec[10].trim().length + rec[11].trim().length + rec[12].trim().length
-													 + rec[13].trim().length + rec[14].trim().length + rec[15].trim().length + rec[16].trim().length + rec[17].trim().length + rec[18].trim().length
-													  + rec[19].trim().length + rec[20].trim().length + rec[21].trim().length + rec[22].trim().length + rec[23].trim().length + rec[24].trim().length + rec[25].trim().length + rec[26].trim().length
-													   + rec[27].trim().length + rec[28].trim().length + rec[29].trim().length + rec[30].trim().length + rec[31].trim().length + rec[32].trim().length + rec[33].trim().length + rec[34].trim().length
-													    + rec[35].trim().length + rec[36].trim().length + rec[37].trim().length + rec[38].trim().length + rec[39].trim().length + rec[40].trim().length + rec[41].trim().length + rec[42].trim().length
-														 + rec[43].trim().length + rec[44].trim().length + rec[45].trim().length + rec[46].trim().length + rec[47].trim().length + rec[48].trim().length + rec[49].trim().length + rec[50].trim().length
-														  + rec[51].trim().length + rec[52].trim().length + rec[53].trim().length + rec[54].trim().length;
+                                                    5].trim().length+ rec[6].trim().length ;
                                                 if (len > 0) {
                                                     rec_count = rec_count + 1;
                                                     result_final.push({
@@ -371,54 +365,7 @@
                                                       'SURNAME': rec[4].trim(),
                                                       'FIRST_NAME': rec[5].trim(),
                                                       'Gender': rec[6].trim(),
-													  'ORIGINAL_HIRE_DATE': rec[7].trim(),
-													  'ADJUSTED_HIRE_DATE': rec[8].trim(),
-													  'TERMINATION_DATE': rec[9].trim(),
-													  'EMPLOYEMENT_TYPE': rec[10].trim(),
-													  'DATE_OF_BIRTH': rec[11].trim(),
-													  'LEAVING_REASON': rec[12].trim(),
-													  'LEGAL_FIRST_NAME': rec[13].trim(),
-													  'REASON_FOR_HIRING': rec[14].trim(),
-													  'REASON_FOR_LEAVING': rec[15].trim(),
-													  'WORK_LOCATION': rec[16].trim(),
-													  'JOB_DESCRIPTION': rec[17].trim(),
-													  'Employee_Number': rec[18].trim(),
-													  'Payroll_Local_Cost_Center_Code': rec[19].trim(),
-													  'Weekly_hours_worked': rec[20].trim(),
-													  'Payroll_Currency': rec[21].trim(),
-													  'Social_Security_Number': rec[22].trim(),
-													  'Payroll_MRP': rec[23].trim(),
-													  'Budget_MRP': rec[24].trim(),
-													  'Location_Code': rec[25].trim(),
-													  'Work_Country': rec[26].trim(),
-													  'Band': rec[27].trim(),
-													  'Supervisor_Surname': rec[28].trim(),
-													  'Supervisor_First_Name': rec[29].trim(),
-													  'Supervisor_Local_Employee_ID': rec[30].trim(),
-													  'Supervisor_Payroll_Entity': rec[31].trim(),
-													  'Annual_Base_Salary': rec[32].trim(),
-													  'Reason_For_Salary_Change': rec[33].trim(),
-													  'Category': rec[34].trim(),
-													  'Budget_Local_Cost_Center_Code': rec[35].trim(),
-													  'Contractual_FTE': rec[36].trim(),
-													  'Organizational_MAF': rec[37].trim(),
-													  'Organizational_MIF': rec[38].trim(),
-													  'Job_Profile': rec[39].trim(),
-													  'Job_Code': rec[40].trim(),
-													  'Job_Family_Group': rec[41].trim(),
-													  'Job_Family': rec[42].trim(),
-													  'HRL': rec[43].trim(),
-													  'Job_Supervisory_Orga_Code': rec[44].trim(),
-													  'Job_Supervisory_Organization': rec[45].trim(),
-													  'Work_Email': rec[46].trim(),
-													  'Is_Manager': rec[47].trim(),
-													  'Position_ID': rec[48].trim(),
-													  'Position_Name': rec[49].trim(),
-													  'Continuous_Service_Date': rec[50].trim(),
-													  'Age': rec[51].trim(),
-													  'WORKDAY_ID': rec[52].trim(),
-													  'Source': rec[53].trim(),
-													  'HFM_STORE_CODE': rec[54].trim(),
+													  
                                                     });
                                                 }
                                             }
