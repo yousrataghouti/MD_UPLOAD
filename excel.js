@@ -10,14 +10,13 @@
     let tmpl = document.createElement("template");
     tmpl.innerHTML = `
       <style>
-      </style>
+      </style>      
     `;
 
     class Excel extends HTMLElement {
 
         constructor() {
             super();
-		console.log('Constructor: Widget is being created');
 
             _shadowRoot = this.attachShadow({
                 mode: "open"
@@ -25,7 +24,7 @@
             _shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
             _id = createGuid();
-
+            
             //_shadowRoot.querySelector("#oView").id = "oView";
 
             this._export_settings = {};
@@ -40,7 +39,7 @@
 
             });
 
-            this._firstConnection = 0;
+            this._firstConnection = 0;            
         }
 
         connectedCallback() {
@@ -237,19 +236,19 @@
         div.slot = "content_" + widgetName;
 
         if(that._firstConnection === 0) {
-            let div0 = document.createElement('div');
-            div0.innerHTML = '<?xml version="1.0"?><script id="oView_' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View height="100%" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" controllerName="myView.Template"><f:SimpleForm editable="true"><f:content><Label text="Upload"></Label><VBox><u:FileUploader id="idfileUploader" width="100%" useMultipart="false" sendXHR="true" sameFilenameAllowed="false" buttonText="" fileType="XLSM" placeholder="Choose a file" style="Emphasized"/><Button text="Upload" press="onValidate" id="__uploadButton" tooltip="Upload a File"/></VBox></f:content></f:SimpleForm></mvc:View></script>';
-            _shadowRoot.appendChild(div0);
+            let div0 = document.createElement('div');   
+            div0.innerHTML = '<?xml version="1.0"?><script id="oView_' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View height="100%" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" controllerName="myView.Template"><f:SimpleForm editable="true"><f:content><Label text="Upload"></Label><VBox><u:FileUploader id="idfileUploader" width="100%" useMultipart="false" sendXHR="true" sameFilenameAllowed="true" buttonText="" fileType="XLSM" placeholder="" style="Emphasized" change="onValidate"></u:FileUploader></VBox></f:content></f:SimpleForm></mvc:View></script>';
+            _shadowRoot.appendChild(div0);  
 
-            let div1 = document.createElement('div');
+            let div1 = document.createElement('div');  
             div1.innerHTML = '<?xml version="1.0"?><script id="myXMLFragment_' + widgetName + '" type="sapui5/fragment"><core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"><SelectDialog title="Partner Number" class="sapUiPopupWithPadding"  items="{' + widgetName + '>/}" search="_handleValueHelpSearch"  confirm="_handleValueHelpClose"  cancel="_handleValueHelpClose"  multiSelect="true" showClearButton="true" rememberSelections="true"><StandardListItem icon="{' + widgetName + '>ProductPicUrl}" iconDensityAware="false" iconInset="false" title="{' + widgetName + '>partner}" description="{' + widgetName + '>partner}" /></SelectDialog></core:FragmentDefinition></script>';
             _shadowRoot.appendChild(div1);
 
-            let div2 = document.createElement('div');
+            let div2 = document.createElement('div');            
             div2.innerHTML = '<div id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"></slot></div>';
-            _shadowRoot.appendChild(div2);
+            _shadowRoot.appendChild(div2);   
 
-            that_.appendChild(div);
+            that_.appendChild(div);     
 
             var mapcanvas_divstr = _shadowRoot.getElementById('oView_' + widgetName);
             var mapcanvas_fragment_divstr = _shadowRoot.getElementById('myXMLFragment_' + widgetName);
@@ -303,10 +302,8 @@
 
                     onValidate: function (e) {
                         var fU = this.getView().byId("idfileUploader");
-                        //var domRef = fU.getFocusDomRef();
-                        //var domRef = this.getView().byId("__xmlview1--idfileUploader-fu").getFocusDomRef();
-                        //var file = domRef.files[0];
-                        var file = $("#__xmlview1--idfileUploader-fu")[0].files[0];
+                        var domRef = fU.getFocusDomRef();
+                        var file = domRef.files[0];
                         var this_ = this;
 
                         this_.wasteTime();
@@ -354,7 +351,7 @@
                                             var rec = result.split("[$@~!~@$]")[i].split("[#@~!~@#]");
                                             if (rec.length > 0) {
                                                 len = rec[0].trim().length + rec[1].trim().length + rec[2].trim().length + rec[3].trim().length + rec[4].trim().length + rec[
-                                                    5].trim().length+ rec[6].trim().length ;
+                                                    5].trim().length + rec[6].trim().length + rec[7].trim().length + rec[8].trim().length;
                                                 if (len > 0) {
                                                     rec_count = rec_count + 1;
                                                     result_final.push({
@@ -365,7 +362,6 @@
                                                       'SURNAME': rec[4].trim(),
                                                       'FIRST_NAME': rec[5].trim(),
                                                       'Gender': rec[6].trim(),
-													  
                                                     });
                                                 }
                                             }
@@ -387,21 +383,30 @@
                                         oModel.setData({
                                             result_final: result_final
                                         });
-
+                                        
                                         var oModel1 = new sap.ui.model.json.JSONModel();
                                         oModel1.setData({
                                             fname: file.name,
                                         });
                                         console.log(oModel);
 
-                                        // var oHeaders =  {
-                                        //     "Authorization": "Basic XXXXXXXX",
-                                        //     "Content-Type": "application/x-www-form-urlencoded"
-                                        // }
+                                        var oHeaders =  {
+                                            "Authorization": "Basic XXXXXXXX",
+                                            "Content-Type": "application/x-www-form-urlencoded"
+                                        }
 
-                                        _result = JSON.stringify(result_final);
+                                        var oModel = new JSONModel();
 
-                                        that._firePropertiesChanged();
+                                        console.log(result_final);
+                                        oModel.loadData("processData.xsjs", JSON.stringify(result_final), true, 'POST', false, true, oHeaders);
+
+                                        oModel.attachRequestCompleted(function() {
+                                            var result = oModel.getData();
+                                            console.log(result);
+
+                                            _result = result;
+
+                                            that._firePropertiesChanged();
                                             this.settings = {};
                                             this.settings.result = "";
 
@@ -413,30 +418,7 @@
 
                                             this_.runNext();
 
-                                        //var oModel = new JSONModel();
-
-                                        //console.log(result_final);
-                                        //oModel.loadData("processData.xsjs", JSON.stringify(result_final), true, 'POST', false, true, oHeaders);
-
-                                        // oModel.attachRequestCompleted(function() {
-                                        //     var result = oModel.getData();
-                                        //     console.log(result);
-
-                                        //     _result = result;
-
-                                        //     that._firePropertiesChanged();
-                                        //     this.settings = {};
-                                        //     this.settings.result = "";
-
-                                        //     that.dispatchEvent(new CustomEvent("onStart", {
-                                        //         detail: {
-                                        //             settings: this.settings
-                                        //         }
-                                        //     }));
-
-                                        //     this_.runNext();
-
-                                        // });
+                                        });
 
 
                                         fU.setValue("");
@@ -508,4 +490,4 @@
             shadowRoot.appendChild(script)
         });
     }
-})();             
+})();
