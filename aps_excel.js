@@ -152,5 +152,5 @@
             }
         }
     }
-    customElements.define("com-y-sap-sac-excel", ExcelAps);
+    customElements.define("com-y-sap-sac-excel-aps", ExcelAps);
 })();
